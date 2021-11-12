@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body
+{
+    position: relative;
+    min-height: 100vh;
+    background: #fff;
+}
+
+/*************************** Navbar responsive **********************************/
+.navbar
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+
+}
+
+.brand-title
+{
+    font-size: 1.5rem;
+    margin: .5rem;
+    color: orange;
+}
+
+.navbar-links ul 
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li 
+{
+    list-style: none;
+}
+
+.navbar-links li a 
+{
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    display: block;
+}
+
+.navbar-links li:hover
+{
+    background-color: #555;
+}
+
+.toggle-button
+{
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar
+{
+    height: 3px;
+    width: 100%;
+    background-color: grey;
+    border-radius: 10px;
+}
+
+
+
+
+/*********** Footer **************/
+footer
+{
+    position: absolute;
+    width: 100%;
+    background: #3586ff;
+    /* height: 10%; */
+    min-height: 50px;
+    bottom: 0;
+    left: 0;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer .social_icon, 
+footer .menu 
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+footer .social_icon li,
+footer .menu li 
+{
+    list-style: none;
+}
+footer .social_icon li a
+{
+    font-size: 2em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline block;
+    transition: 0.5s;
+}
+
+footer .social_icon li a:hover ion-icon
+{
+    transform: translateY(-10px);
+}
+
+footer .menu li a
+{
+    font-size: 1.2em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    text-decoration: none;
+    opacity: 0.75;
+}
+footer .menu li a:hover
+{
+    opacity: 1;
+}
+
+footer p{
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+footer .vague
+{
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background:  url(/img/wave.png);
+    background-size: 1000px 100px;
+}
+
+footer .vague#vague1
+{
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animVague 4s linear infinite;
+}
+
+footer .vague#vague2
+{
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 5px;
+    animation: animVague2 4s linear infinite;
+}
+
+footer .vague#vague3
+{
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 0;
+    animation: animVague 3s linear infinite;
+}
+
+footer .vague#vague4
+{
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animVague2 3s linear infinite;
+}
+
+@keyframes animVague
+{
+    0%
+    {
+        background-position-x: 1000px;    
+    }
+    100%
+    {
+        background-position-x: 0px;
+    }
+}
+
+@keyframes animVague2
+{
+    0%
+    {
+        background-position-x: 0px;    
+    }
+    100%
+    {
+        background-position-x: 1000px;
+    }
+}
+
+
+@media (max-width: 450px) 
+{
+    .brand-title
+    {
+        font-weight: bold;
+    }
+    .toggle-button 
+    {
+        display: flex;
+    }
+    .navbar-links
+    {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar
+    {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-links ul
+    {
+        width: 100%;
+        flex-direction: column;
+        background-color: #666;
+        border-radius: 350%;
+    }
+
+    .navbar-links li
+    {
+        text-align: center;
+
+    }
+    .navbar-links li a 
+    {
+        padding: .5rem 1rem;
+        color: #fff;
+        font-weight: bold;
+    }
+
+
+    .navbar-links.active 
+    {
+        display: flex;
+    }
+    
+    footer
+    {
+        position: absolute;
+        width: 100%;
+        background: #3586ff;
+        height: 50px;
+        /* min-height: 10px; */
+        bottom: 0;
+        left: 0;
+        /* padding: 20px 50px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    footer .vague#vague1,
+    footer .vague#vague2,
+    footer .vague#vague3,
+    footer .vague#vague4
+    {
+        /* height: auto; */
+    }
+
+    footer .vague{
+        position: absolute;
+        /* bottom: ; */
+        height: 80px;
+        margin-top: 9%;
+    }
+    
+    footer .social_icon
+    {
+        display: none;
+    }
+
+    footer .menu{
+        display: none;
+    }
+    footer p 
+    {
+        padding: 0;
+        margin: 0;
+        font-size: .60rem;
+    
+    }
+
+    img
+    {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        top: 380px;
+
+    }
+
+}
+
+
